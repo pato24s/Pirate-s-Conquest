@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface GameStartProps {
   onStartGame: (name: string, shipIndex: number) => void;
@@ -7,7 +7,6 @@ interface GameStartProps {
 const GameStart: React.FC<GameStartProps> = ({ onStartGame }) => {
   const [playerName, setPlayerName] = useState('');
   const [selectedShip, setSelectedShip] = useState(0);
-  const [shipImages, setShipImages] = useState<HTMLImageElement[]>([]);
   
   // Ship options with their image paths
   const shipOptions = [
@@ -18,23 +17,6 @@ const GameStart: React.FC<GameStartProps> = ({ onStartGame }) => {
     { id: 4, name: 'Pale Wanderer', image: '/assets/ships/ship-white.png' },
     { id: 5, name: 'Gilded Ship', image: '/assets/ships/ship-yellow.png' },
   ];
-
-  // Preload ship images
-  useEffect(() => {
-    const loadImages = async () => {
-      const loadedImages = await Promise.all(
-        shipOptions.map((ship) => {
-          return new Promise<HTMLImageElement>((resolve) => {
-            const img = new Image();
-            img.src = ship.image;
-            img.onload = () => resolve(img);
-          });
-        })
-      );
-      setShipImages(loadedImages);
-    };
-    loadImages();
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
