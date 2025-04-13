@@ -23,7 +23,7 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ playerName, shipIndex }) => {
     console.log("Attempting to connect to Socket.IO server...");
     
     // Connect with improved configuration
-    const newSocket = io('/', {
+    const newSocket = io('https://pirate-s-conquest-1.onrender.com/', {
       transports: ['polling', 'websocket'],
       reconnection: true,
       reconnectionAttempts: 10,
