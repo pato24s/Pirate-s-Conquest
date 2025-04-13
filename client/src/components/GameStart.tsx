@@ -10,12 +10,12 @@ const GameStart: React.FC<GameStartProps> = ({ onStartGame }) => {
   
   // Ship options with their image paths
   const shipOptions = [
-    { id: 0, name: 'Crimson Crusader', image: '/assets/ships/ship-red.png' },
-    { id: 1, name: 'Sapphire Steed', image: '/assets/ships/ship-blue.png' },
-    { id: 2, name: 'Verdant Fang', image: '/assets/ships/ship-green.png' },
-    { id: 5, name: 'Obsidian Death', image: '/assets/ships/ship-black.png' },
-    { id: 4, name: 'Pale Wanderer', image: '/assets/ships/ship-white.png' },
-    { id: 3, name: 'Gilded Ship', image: '/assets/ships/ship-yellow.png' },
+    { id: 0, name: 'Crimson Crusader', image: './assets/ships/ship-red.png' },
+    { id: 1, name: 'Sapphire Steed', image: './assets/ships/ship-blue.png' },
+    { id: 2, name: 'Verdant Fang', image: './assets/ships/ship-green.png' },
+    { id: 5, name: 'Obsidian Death', image: './assets/ships/ship-black.png' },
+    { id: 4, name: 'Pale Wanderer', image: './assets/ships/ship-white.png' },
+    { id: 3, name: 'Gilded Ship', image: './assets/ships/ship-yellow.png' },
   ];
 
   // Show banner on initial load

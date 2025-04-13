@@ -6,12 +6,12 @@ export class AssetLoader {
 
   // Ship assets (one for each color)
   private shipAssets = [
-    'ship-red.png',
-    'ship-blue.png',
-    'ship-green.png',
-    'ship-yellow.png',
-    'ship-white.png',
-    'ship-black.png'
+    './ship-red.png',
+    './ship-blue.png',
+    './ship-green.png',
+    './ship-yellow.png',
+    './ship-white.png',
+    './ship-black.png'
   ];
 
   // Other game assets
