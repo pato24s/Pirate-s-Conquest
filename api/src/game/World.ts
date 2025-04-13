@@ -23,8 +23,8 @@ export class World {
   private rockSpawnInterval: NodeJS.Timeout | null = null;
   
   // Game balance configuration
-  private initialRockCount: number = 300;
-  private maxRockCount: number = 1000;
+  private initialRockCount: number = 1000;
+  private maxRockCount: number = 3000;
   private woodSpawnQuantity: number = 50;
   private chestSpawnQuantity: number = 0; // Set to 0 to disable chest spawning
   private rockSpawnQuantity: number = 1;
