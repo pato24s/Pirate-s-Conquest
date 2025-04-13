@@ -490,7 +490,7 @@ class GameEngine {
         if (this.isProjectileVisible(projectile)) {
           const screenX = centerX + (projectile.x - this.player!.x);
           const screenY = centerY + (projectile.y - this.player!.y);
-          this.drawProjectile(projectile, screenX, screenY);
+          this.drawProjectile(screenX, screenY);
         }
       });
     }
@@ -759,7 +759,7 @@ class GameEngine {
   }
 
   // Add method to draw projectiles
-  private drawProjectile(projectile: any, x: number, y: number): void {
+  private drawProjectile(x: number, y: number): void {
     // Save context
     this.ctx.save();
     
