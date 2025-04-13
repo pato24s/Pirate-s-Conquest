@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface GameStartProps {
   onStartGame: (name: string, shipIndex: number) => void;
@@ -18,8 +18,15 @@ const GameStart: React.FC<GameStartProps> = ({ onStartGame }) => {
     { id: 3, name: 'Gilded Ship', image: '/assets/ships/ship-yellow.png' },
   ];
 
+  // Show banner on initial load
+  useEffect(() => {
+    (window as any).sdk?.showBanner();
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Show banner when clicking Set Sail
+    (window as any).sdk?.showBanner();
     onStartGame(playerName, selectedShip);
   };
 

@@ -129,6 +129,8 @@ class GameEngine {
     this.socket.on('player:died', () => {
       // Show death animation or message if needed
       console.log('You died! Respawning...');
+      // Show banner on respawn
+      (window as any).sdk?.showBanner();
     });
   }
 
@@ -791,24 +793,24 @@ class GameEngine {
     // Draw zoom info
     this.ctx.fillStyle = 'white';
     this.ctx.font = '12px Arial';
-    this.ctx.fillText(`Zoom: ${this.zoomLevel.toFixed(2)}`, 10, 20);
+    // this.ctx.fillText(`Zoom: ${this.zoomLevel.toFixed(2)}`, 10, 20);
     
     if (this.player) {
-      this.ctx.fillText(`Player Position: (${Math.floor(this.player.x)}, ${Math.floor(this.player.y)})`, 10, 40);
-      this.ctx.fillText(`Player ID: ${this.player.id.substring(0, 8)}`, 10, 60);
-      this.ctx.fillText(`Player HP: ${this.player.hp}, Cannons: ${this.player.cannons}`, 10, 80);
-      this.ctx.fillText(`Entities: ${this.entities.length}, Projectiles: ${this.projectiles.length}`, 10, 100);
+      // this.ctx.fillText(`Player Position: (${Math.floor(this.player.x)}, ${Math.floor(this.player.y)})`, 10, 40);
+      // this.ctx.fillText(`Player ID: ${this.player.id.substring(0, 8)}`, 10, 60);
+      // this.ctx.fillText(`Player HP: ${this.player.hp}, Cannons: ${this.player.cannons}`, 10, 80);
+      // this.ctx.fillText(`Entities: ${this.entities.length}, Projectiles: ${this.projectiles.length}`, 10, 100);
       
       // Show visible area dimensions
-      const visibleWidth = Math.floor(this.canvas.width / this.zoomLevel);
-      const visibleHeight = Math.floor(this.canvas.height / this.zoomLevel);
-      this.ctx.fillText(`Visible Area: ${visibleWidth}x${visibleHeight} px`, 10, 120);
+      // const visibleWidth = Math.floor(this.canvas.width / this.zoomLevel);
+      // const visibleHeight = Math.floor(this.canvas.height / this.zoomLevel);
+      // this.ctx.fillText(`Visible Area: ${visibleWidth}x${visibleHeight} px`, 10, 120);
       
       // Display assets loaded status
-      this.ctx.fillText(`Assets Loaded: ${this.assetsLoaded ? 'Yes' : 'No'}`, 10, 140);
+      // this.ctx.fillText(`Assets Loaded: ${this.assetsLoaded ? 'Yes' : 'No'}`, 10, 140);
       
       // Use separate y-coordinate to ensure ships are always shown
-      let shipDisplayY = 160;
+      let shipDisplayY = 20;
       this.ctx.fillText(`Other Ships:`, 10, shipDisplayY);
       shipDisplayY += 20;
       

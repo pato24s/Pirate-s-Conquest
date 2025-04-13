@@ -217,10 +217,6 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ playerName, shipIndex }) => {
           {/* Game UI Overlay */}
           <div className="absolute top-0 left-0 right-0 p-4 flex justify-between">
             <div>
-              <div className="bg-black bg-opacity-50 p-2 rounded-lg text-white">
-                <div className="mb-1">HP: {stats.hp}</div>
-                <div>Cannons: {stats.cannonCount}</div>
-              </div>
             </div>
             
             {/* Kill feed */}
@@ -233,11 +229,13 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ playerName, shipIndex }) => {
           
           {/* Game controls hint */}
           <div className="absolute bottom-0 left-0 p-4 bg-black bg-opacity-50 text-white rounded-tr-lg">
+            <div className="text-sm">Gather wood wreckage to increase size, HP and cannons</div>
+            <div className="text-sm">Destroy rocks to free space</div>
             <div className="text-sm">W: Move Forward</div>
             <div className="text-sm">A/D: Rotate</div>
             <div className="text-sm">Space: Fire Cannons</div>
-            <div className="text-sm">+/-: Zoom In/Out</div>
-            <div className="text-sm">`/~: Toggle Admin Panel</div>
+            {/* <div className="text-sm">+/-: Zoom In/Out</div> */}
+            {/* <div className="text-sm">`/~: Toggle Admin Panel</div> */}
           </div>
           
           {/* Admin Panel */}
