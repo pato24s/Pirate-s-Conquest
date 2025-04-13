@@ -10,8 +10,8 @@ export class AssetLoader {
     'ship-blue.png',
     'ship-green.png',
     'ship-yellow.png',
-    'ship-purple.png',
-    'ship-orange.png'
+    'ship-white.png',
+    'ship-black.png'
   ];
 
   // Other game assets

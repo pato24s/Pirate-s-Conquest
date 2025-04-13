@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface GameStartProps {
   onStartGame: (name: string, shipIndex: number) => void;
@@ -7,16 +7,34 @@ interface GameStartProps {
 const GameStart: React.FC<GameStartProps> = ({ onStartGame }) => {
   const [playerName, setPlayerName] = useState('');
   const [selectedShip, setSelectedShip] = useState(0);
+  const [shipImages, setShipImages] = useState<HTMLImageElement[]>([]);
   
-  // Ship options (will be replaced with actual sprite images)
+  // Ship options with their image paths
   const shipOptions = [
-    { id: 0, name: 'Red Ship', color: 'bg-red-700' },
-    { id: 1, name: 'Blue Ship', color: 'bg-blue-700' },
-    { id: 2, name: 'Green Ship', color: 'bg-green-700' },
-    { id: 3, name: 'Yellow Ship', color: 'bg-yellow-600' },
-    { id: 4, name: 'White Ship', color: 'bg-white' },
-    { id: 5, name: 'Black Ship', color: 'bg-black' },
+    { id: 0, name: 'Crimsom Crusader', image: '/assets/ships/ship-red.png' },
+    { id: 1, name: 'Sapphire Steed', image: '/assets/ships/ship-blue.png' },
+    { id: 2, name: 'Verdant Fang', image: '/assets/ships/ship-green.png' },
+    { id: 3, name: 'Obsidian Death', image: '/assets/ships/ship-black.png' },
+    { id: 4, name: 'Pale Wanderer', image: '/assets/ships/ship-white.png' },
+    { id: 5, name: 'Gilded Ship', image: '/assets/ships/ship-yellow.png' },
   ];
+
+  // Preload ship images
+  useEffect(() => {
+    const loadImages = async () => {
+      const loadedImages = await Promise.all(
+        shipOptions.map((ship) => {
+          return new Promise<HTMLImageElement>((resolve) => {
+            const img = new Image();
+            img.src = ship.image;
+            img.onload = () => resolve(img);
+          });
+        })
+      );
+      setShipImages(loadedImages);
+    };
+    loadImages();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,12 +66,16 @@ const GameStart: React.FC<GameStartProps> = ({ onStartGame }) => {
                 <div
                   key={ship.id}
                   onClick={() => setSelectedShip(ship.id)}
-                  className={`${ship.color} h-16 w-24 mx-auto rounded cursor-pointer transition-transform hover:scale-110 flex items-center justify-center ${
+                  className={`relative h-18 w-24 mx-auto rounded cursor-pointer transition-transform hover:scale-110 flex flex-col items-center justify-center bg-pirate-blue bg-opacity-50 p-2 ${
                     selectedShip === ship.id ? 'ring-4 ring-pirate-gold transform scale-110' : ''
                   }`}
                 >
-                  {/* Ship sprite will go here */}
-                  <span className="text-xs text-center">{ship.name}</span>
+                  <img 
+                    src={ship.image} 
+                    alt={ship.name}
+                    className="h-12 w-20 object-contain mb-2"
+                  />
+                  <span className="text-sm text-center text-pirate-gold">{ship.name}</span>
                 </div>
               ))}
             </div>
