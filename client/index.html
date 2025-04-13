@@ -5,6 +5,37 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pirates' Conquest</title>
+    <script type="text/javascript">
+     window.SDK_OPTIONS = {
+        gameId: "pwbkv2uqs47ckfwj69a44h94724jxbzu", // <- Replace with your real Game ID
+        onEvent: function (a) {
+           switch (a.name) {
+              case "SDK_GAME_PAUSE":
+                 // pause game logic / mute audio
+                 break;
+              case "SDK_GAME_START":
+                 // ad finished, resume game logic
+                 break;
+              case "SDK_READY":
+                 // SDK ready
+                 break;
+              case "SDK_ERROR":
+                 // handle error
+                 break;
+           }
+        }
+     };
+
+     (function (a, b, c) {
+        var d = a.getElementsByTagName(b)[0];
+        if (!a.getElementById(c)) {
+           a = a.createElement(b);
+           a.id = c;
+           a.src = "https://api.gamemonetize.com/sdk.js";
+           d.parentNode.insertBefore(a, d);
+        }
+     })(document, "script", "gamemonetize-sdk");
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">

@@ -12,6 +12,7 @@ if (!fs.existsSync(path.resolve(__dirname, './public/assets'))) {
 }
 
 export default defineConfig({
+  base: './', // 🟢 THIS is the magic line for GameMonetize
   plugins: [react()],
   resolve: {
     alias: {
@@ -20,10 +21,10 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    host: true, // Listen on all addresses
-    strictPort: true, // Throw if port is already in use
+    host: true,
+    strictPort: true,
     hmr: {
-      clientPort: 3000 // Force HMR client port
+      clientPort: 3000
     },
     proxy: {
       '/socket.io': {
@@ -44,5 +45,5 @@ export default defineConfig({
     },
     cors: false
   },
-  publicDir: path.resolve(__dirname, '../public'), // Use the root public folder
-}); 
+  publicDir: path.resolve(__dirname, '../public'),
+});

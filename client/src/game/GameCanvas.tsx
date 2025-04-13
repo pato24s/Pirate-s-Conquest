@@ -12,7 +12,7 @@ interface GameCanvasProps {
 const GameCanvas: React.FC<GameCanvasProps> = ({ playerName, shipIndex }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [socket, setSocket] = useState<Socket | null>(null);
-  const [stats, setStats] = useState({ hp: 1, cannonCount: 2 });
+  const [_, setStats] = useState({ hp: 1, cannonCount: 2 });
   const [killfeed, setKillfeed] = useState<string[]>([]);
   const [assetsLoaded, setAssetsLoaded] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
