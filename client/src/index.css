@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional custom styles can go here */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pirata One', cursive;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+/* Admin Panel Styles */
+.admin-panel {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  border-radius: 8px;
+  padding: 15px;
+  width: 350px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+  border: 2px solid #555;
+}
+
+.admin-panel h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #555;
+  padding-bottom: 8px;
+  font-size: 18px;
+}
+
+.admin-panel h3 {
+  font-size: 16px;
+  margin: 12px 0 8px;
+}
+
+.config-stats {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.config-stats p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.config-section {
+  margin-bottom: 15px;
+  background: rgba(50, 50, 50, 0.4);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 80px;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.input-group button {
+  background: #3a617a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.input-group button:hover {
+  background: #4a81a5;
+}
+
+.input-group button:last-child {
+  margin-left: 8px;
+} 

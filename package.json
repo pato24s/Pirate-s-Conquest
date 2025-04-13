@@ -1,0 +1,31 @@
+{
+  "name": "pirates-conquest",
+  "version": "1.0.0",
+  "description": "A real-time, browser-based multiplayer game inspired by agar.io with a seafaring twist",
+  "private": true,
+  "workspaces": [
+    "client",
+    "api"
+  ],
+  "scripts": {
+    "dev:client": "npm run dev --workspace=client",
+    "dev:api": "npm run dev --workspace=api",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:api\"",
+    "build": "npm run build --workspaces",
+    "start": "npm run start --workspace=api"
+  },
+  "keywords": [
+    "game",
+    "multiplayer",
+    "canvas",
+    "websockets",
+    "pixel-art",
+    "pirates"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.2.2"
+  }
+} 
