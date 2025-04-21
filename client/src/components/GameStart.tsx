@@ -26,7 +26,7 @@ const GameStart: React.FC<GameStartProps> = ({ onStartGame }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Show banner when clicking Set Sail
-    (window as any).sdk?.showBanner();
+    // (window as any).sdk?.showBanner();
     onStartGame(playerName, selectedShip);
   };
 
