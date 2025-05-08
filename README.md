@@ -1,4 +1,4 @@
-# Pirates' Conquest
+# Pirates' Conquest - Vibe Coding Experiment
 
 A real-time, browser-based multiplayer game inspired by the mechanics of agar.io but with a seafaring twist and pixel art aesthetics. Control your pirate ship, collect resources, and engage in cannon battles to become the most feared pirate on the high seas.
 
